@@ -1,0 +1,80 @@
+<?xml version="1.0"?>
+<Config xmlns:xsd="http://www.w3.org/2001/XMLSchema" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance">
+	<Devices>
+		<Device Name="DJHERCULESMIX Universal DJ">
+			<Mappings>
+
+				<Mapping Name="Autopilot Altitude +" MidiTrigger="79536">
+					<Result>
+						<SimEvent Command="AP_ALT_VAR_INC">
+							<Parameter>
+								<StaticParameter Value="100" />
+							</Parameter>
+						</SimEvent>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Autopilot Altitude -" MidiTrigger="8337072">
+					<Result>
+						<SimEvent Command="AP_ALT_VAR_DEC">
+							<Parameter>
+								<StaticParameter Value="100" />
+							</Parameter>
+						</SimEvent>
+					</Result>
+				</Mapping>
+
+
+				<Mapping Name="Autopilot Altitude Managed Mode" MidiTrigger="8346768">
+					<Result>
+						<SimEvent Command="A32NX.FCU_ALT_PULL"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Autopilot 1" MidiTrigger="8346000">
+					<Result>
+						<SimEvent Command="A32NX.FCU_AP_1_PUSH"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Autopilot 2" MidiTrigger="8345488">
+					<Result>
+						<SimEvent Command="A32NX.FCU_AP_2_PUSH"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Autothrottle" MidiTrigger="8345744">
+					<Result>
+						<SimEvent Command="A32NX.FCU_ATHR_PUSH"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Ack Master Warning" MidiTrigger="8327568">
+					<Result>
+						<SimEvent Command="MASTER_CAUTION_ACKNOWLEDGE"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="Ack Master Caution" MidiTrigger="8328592">
+					<Result>
+						<SimEvent Command="MASTER_WARNING_ACKNOWLEDGE"/>
+					</Result>
+				</Mapping>
+				
+				<Mapping Name="Chrono" MidiTrigger="8327824">
+					<Result>
+						<SimEvent Command="H:A32NX_EFIS_L_CHRONO_PUSHED"/>
+					</Result>
+				</Mapping>
+
+				<Mapping Name="FD" MidiTrigger="8329104">
+					<Result>
+						<SimEvent Command="TOGGLE_FLIGHT_DIRECTOR"/>
+					</Result>
+				</Mapping>
+			</Mappings>
+		</Device>
+	</Devices>
+
+	<SimConnectConfig ClientName="MSFS_MIDI_Service" Location="localhost" Port="500" />
+</Config>
